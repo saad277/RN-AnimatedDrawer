@@ -1,8 +1,9 @@
 import React from "react";
-import { Text } from "react-native";
+
+import Navigator from "./navigators";
 
 const App = () => {
-    return <Text>askdmsak</Text>;
+    return <Navigator />;
 };
 
 export default App;
