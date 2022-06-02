@@ -1,20 +1,21 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Animated from "react-native-reanimated";
 
 const Home = (props) => {
-    const { animatedStyle } = props;
+    const { animatedStyle, navigation } = props;
     return (
         <Animated.View
             style={{
                 flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
                 backgroundColor: "#fff",
-                ...animatedStyle
+                ...animatedStyle,
+                padding: 50
             }}
         >
-            <Text>Home Screen</Text>
+            <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+                <Text>Open Drawer</Text>
+            </TouchableOpacity>
         </Animated.View>
     );
 };

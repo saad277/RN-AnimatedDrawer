@@ -30,7 +30,7 @@ const CustomDrawerContent = () => {
         <View style={{ flex: 1 }}>
             <View
                 style={{
-                    width: 210,
+                    width: 160,
                     height: 107,
                     borderBottomEndRadius: 107 / 2,
                     justifyContent: "center",
@@ -73,14 +73,13 @@ const DrawerMenu = () => {
         outputRange: [1, 0.75]
     });
 
-    const borderRadius = interpolateNode(progress, {
+    const rotate = Animated.interpolateNode(progress, {
         inputRange: [0, 1],
-        outputRange: [1, 30]
+        outputRange: ["0deg", "10deg"]
     });
 
     const animatedStyle = {
-        borderRadius,
-        transform: [{ scale }]
+        transform: [{ scale, rotate }]
     };
 
     return (
@@ -91,7 +90,7 @@ const DrawerMenu = () => {
                 overlayColor="transparent"
                 drawerStyle={{
                     flex: 1,
-                    width: "60%",
+                    width: "50%",
                     backgroundColor: "transparent"
                 }}
                 sceneContainerStyle={{
